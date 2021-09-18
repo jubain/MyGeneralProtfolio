@@ -33,7 +33,7 @@
   margin-bottom: 30px;
 }
 
-.menu ul li a {
+.menu ul li .item {
   font-size: inherit;
   color: inherit;
   text-decoration: none;

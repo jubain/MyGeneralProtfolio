@@ -1,19 +1,32 @@
+.mainContact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  width: 100%;
+}
 .contact {
   background-color: white;
   display: flex;
+  height: 100%;
 }
 
 .contact .left {
-  flex: 1;
+  flex: 2;
   overflow: hidden;
+}
+.contact .left img {
+  width: 100%;
+  margin-top: 70px;
+  height: 80%;
 }
 
 .contact .right {
-  flex: 1;
+  flex: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .contact .right h2 {
@@ -21,8 +34,8 @@
 }
 
 .contact .right form {
-  width: 70%;
-  height: 35%;
+  width: 100%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,26 +43,29 @@
 }
 
 .contact .right form input {
-  width: 300px;
-  height: 30px;
-  font-size: 14px;
+  width: 350px;
+  height: 100px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .contact .right form textarea {
-  width: 300px;
-  height: 200px;
-  font-size: 14px;
+  width: 350px;
+  height: 700px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .contact .right form button {
   width: 150px;
-  height: 30px;
+  height: 150px;
   color: white;
   background-color: crimson;
   border: none;
   border-radius: 10px;
   font-weight: 500;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .contact .right form button:focus {
@@ -58,19 +74,141 @@
 
 .contact .right form span {
   color: green;
+  position: absolute;
+  top: 77%;
+}
+
+.contact .right .address {
+  display: flex;
+  width: 60%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact .right .address .phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  border-radius: 15px;
+  height: 50px;
+  background-color: white;
+  border: 1px var(--mainColor) solid;
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+.contact .right .address .phone .phoneIcon {
+  font-size: 35px;
+  color: var(--mainColor);
+}
+.contact .right .address .phone:hover {
+  background-color: var(--mainColor);
+  border-color: var(--mainColor);
+  border-style: solid;
+  border-width: 1px;
+}
+.contact .right .address .phone .phoneName {
+  font-size: 13px;
+  color: var(--mainColor);
+}
+.contact .right .address .phone:hover .phoneName {
+  color: white;
+}
+
+.contact .right .address .phone:hover .phoneIcon {
+  color: white;
+}
+
+.contact .right .address .email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  border-radius: 15px;
+  height: 50px;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+.contact .right .address .email .emailIcon {
+  font-size: 35px;
+  color: var(--mainColor);
+}
+.contact .right .address .email .emailName {
+  font-size: 13px;
+  color: var(--mainColor);
+}
+
+.contact .right .address .email:hover {
+  background-color: var(--mainColor);
+}
+.contact .right .address .email:hover .phone {
+  background-color: white;
+}
+
+.contact .right .address .email:hover .emailIcon {
+  color: white;
+}
+
+.contact .right .address .email:hover .emailName {
+  color: white;
 }
 
 @media only screen and (max-width: 767px) {
   .contact {
     flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .contact .left {
+    flex: 1;
+  }
+
+  .contact .left img {
+    object-fit: scale-down;
+  }
+
+  .contact .right {
+    flex: 2;
+  }
+  .contact .right form {
+    width: 90%;
+    height: 65%;
   }
   .contact .right form input {
-    width: 200px;
-    height: 20px;
+    width: 90%;
+    height: 30px;
   }
 
   .contact .right form textarea {
-    width: 200px;
-    height: 100px;
+    width: 90%;
+    height: 200px;
+  }
+
+  .contact .right form button {
+    font-size: 15px;
+    width: 400px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .contact .right .address {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .contact .right .address .phone {
+    width: 99%;
+    margin-bottom: 20px;
+  }
+
+  .contact .right .address .email {
+    width: 99%;
   }
 }

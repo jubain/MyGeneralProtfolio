@@ -1,28 +1,35 @@
 import React from 'react';
 import './menu.css'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 function Menu({ menuOpen, setmenuOpen }) {
     return (
+
         <div className={"menu " + (menuOpen && 'active')}>
-            {console.log('hi')}
             <ul>
                 <li onClick={() => setmenuOpen(false)}>
-                    <a href="#intro">Intro</a>
+                    <Link to="/" className="item" >Intro</Link>
                 </li>
-                <li onClick={() => setmenuOpen(false)}>
+                {/* <li onClick={() => setmenuOpen(false)}>
                     <a href="#portfolio">Portfolio</a>
-                </li>
+                </li> */}
                 <li onClick={() => setmenuOpen(false)}>
-                    <a href="#works">Works</a>
+                    <Link to="/works" className="item">Services</Link>
                 </li>
-                <li onClick={() => setmenuOpen(false)}>
+                {/* <li onClick={() => setmenuOpen(false)}>
                     <a href="#testimonial">Testimonial</a>
-                </li>
+                </li> */}
                 <li onClick={() => setmenuOpen(false)}>
-                    <a href="#contact">Contact</a>
+                    <Link to="/contact" className="item">Contact</Link>
                 </li>
             </ul>
         </div>
+
     );
 }
 

@@ -6,7 +6,7 @@
 }
 
 .intro .left {
-  flex: 0.5;
+  flex: 1;
   overflow: hidden;
 }
 
@@ -21,12 +21,13 @@
 }
 
 .intro .left .imageContainer img {
-  width: 90%;
+  width: 100%;
 }
 
 .intro .right {
-  flex: 0.5;
+  flex: 1;
   position: relative;
+  padding-left: 10px;
 }
 
 .intro .right .wrapper {
@@ -55,16 +56,34 @@
   color: cornflowerblue;
 }
 
-.intro .right a {
-  position: absolute;
-  bottom: 10px;
-  left: 40%;
+.intro .right .wrapper {
+  font-size: 15px;
 }
 
-.intro .right a .image {
+.intro .right button {
+  position: absolute;
+  bottom: 150px;
+  left: 10%;
+  /* animation: arrowBlink 3s infinite; */
+  width: 70%;
+  height: 10%;
+  font-size: 20px;
+  border-radius: 15px;
+  border-color: var(--mainColor);
+  background-color: var(--mainColor);
+  color: white;
+  cursor: pointer;
+}
+
+.intro .right button:hover {
+  opacity: 0.5;
+  transition: all 0.5s ease;
+}
+
+/* .intro .right a .image {
   font-size: 50px;
   animation: arrowBlink 1s infinite;
-}
+} */
 
 @keyframes arrowBlink {
   100% {
@@ -81,13 +100,13 @@
   }
 
   .intro .left .imageContainer {
-    width: 700px;
-    height: 700px;
-    border-radius: 50%;
+    width: 500px;
+    height: 500px;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     float: right;
+    border-radius: 0%;
   }
 
   .intro .right .wrapper {
@@ -95,17 +114,31 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-left: 0;
+    justify-content: flex-start;
     align-items: center;
   }
 
   .intro .right .wrapper h1 {
-    font-size: 40px;
+    font-size: 30px;
     margin: 10px 0;
   }
 
+  .intro .right .wrapper h2 {
+    font-size: 25px;
+  }
+
   .intro .right .wrapper h3 {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .intro .right .wrapper {
+    font-size: 14px;
+  }
+
+  .intro .right button {
+    width: 90%;
+    height: 100px;
+    bottom: 50px;
+    left: 30px;
   }
 }

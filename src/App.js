@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import Topbar from './components/topbar/Topbar'
 import Intro from './components/intro/Intro'
-import Portfolio from './components/portfolio/Porfolio'
-import Works from './components/works/Works'
-import Testimonial from './components/testimonial/Testimonial'
+import Works from './pages/works/Works'
 import Contact from './components/contact/Contact'
 import Menu from './components/menu/Menu'
 import './App.css'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 
 function App() {
@@ -14,17 +17,32 @@ function App() {
   const [menuOpen, setmenuOpen] = useState(false)
 
   return (
-    <div className="app">
-      <Topbar setmenuOpen={setmenuOpen} menuOpen={menuOpen} />
-      <Menu setmenuOpen={setmenuOpen} menuOpen={menuOpen} />
-      <div className="sections">
-        <Intro />
-        <Portfolio />
-        <Works />
-        <Testimonial />
-        <Contact />
+    <Router>
+      <div className="app">
+
+        <Topbar setmenuOpen={setmenuOpen} menuOpen={menuOpen} />
+        <Menu setmenuOpen={setmenuOpen} menuOpen={menuOpen} />
+
+        <Switch>
+          <Route exact path="/">
+            <div className="sections">
+              <Intro />
+            </div>
+          </Route>
+          <Route path="/works">
+            <div className="sections">
+              <Works />
+            </div>
+          </Route>
+          <Route path="/contact">
+            <div className="sections">
+              <Contact />
+            </div>
+          </Route>
+        </Switch>
+
       </div>
-    </div>
+    </Router>
   );
 }
 
