@@ -195,4 +195,33 @@
   .works .slider .container .item .right img {
     width: 145px;
   }
+
+  .card {
+    background-color: white;
+  }
+
+  .card .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    overflow: hidden;
+  }
+
+  .card .container img {
+    width: 100%;
+    flex: 1;
+  }
+
+  .card .container .contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    flex: 2;
+    height: 100%;
+    padding: 10px 10px 0 10px;
+  }
 }

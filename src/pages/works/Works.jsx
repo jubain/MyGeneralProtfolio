@@ -1,6 +1,20 @@
 import React, { useState } from 'react';
 import './works.css'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { Modal } from '@mui/material'
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '1px solid #000',
+    boxShadow: 24,
+    p: 4,
+    height: '60%',
+};
 
 const data = [
     {
@@ -54,6 +68,17 @@ function Works(props) {
 
     const [currentSlider, setcurrentSlider] = useState(0)
 
+    // Modal
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+    const [selecteService, setselecteService] = useState({
+        image: '',
+        title: '',
+        description: ''
+    })
+    // Modal Ends
+
     const handleClick = (way) => {
         way === 'left' ? setcurrentSlider(currentSlider > 0 ? currentSlider - 1 : 2) :
             setcurrentSlider(currentSlider < data.length - 1 ? currentSlider + 1 : 0)
@@ -64,10 +89,14 @@ function Works(props) {
     return (
         <div id='works' className='works'>
             <h1>Services</h1>
+
             <div className='slider' style={{ transform: `translateX(-${currentSlider * 100}vw)` }}>
                 {data.map(item => {
                     return (
-                        <div className='container'>
+                        <div className='container' onClick={matches ? () => {
+                            handleOpen();
+                            setselecteService({ image: item.img, title: item.title, description: item.desc })
+                        } : null}>
                             <div className='item' style={matches === true ? { backgroundImage: `url(${item.img})`, backgroundSize: 'cover' } : null}>
                                 <div className='left'>
                                     <div className='leftContainer'>
@@ -86,14 +115,31 @@ function Works(props) {
                                     />
                                 </div>
                             </div>
+
                         </div>
                     )
                 })
                 }
+                <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <div className="card" style={style}>
+                        <div className='container'>
+                            <img src={selecteService.image} />
+                            <div className="contents">
+                                <h1>{selecteService.title}</h1>
+                                <p>{selecteService.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                </Modal>
             </div>
             <img className='arrow left' onClick={() => handleClick('left')} src="https://raw.githubusercontent.com/safak/youtube/react-portfolio/public/assets/arrow.png" />
             <img className='arrow right' onClick={() => handleClick('right')} src="https://raw.githubusercontent.com/safak/youtube/react-portfolio/public/assets/arrow.png" />
-        </div >
+        </div>
     );
 }
 
