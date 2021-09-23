@@ -1,0 +1,66 @@
+.projects {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.projects .container .left {
+  flex: 1.5;
+  padding: 20px 10px 0 10px;
+  display: flex;
+}
+
+.projects .container .right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 300px;
+}
+
+.projects .container .right .review {
+  font-style: italic;
+}
+
+.projects .container .right .team {
+  font-weight: bold;
+}
+
+.projects .container .right .job {
+}
+
+@media only screen and (max-width: 767px) {
+  .projects .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .projects .container .left {
+    display: flex;
+    justify-content: center;
+  }
+
+  .projects .container .left img {
+    width: 95%;
+  }
+
+  .projects .container .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 95%;
+  }
+}

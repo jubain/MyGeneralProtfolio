@@ -10,6 +10,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import Projects from './components/projectss/Projects'
 
 
 function App() {
@@ -32,6 +33,11 @@ function App() {
           <Route path="/works">
             <div className="sections">
               <Works />
+            </div>
+          </Route>
+          <Route path="/projects">
+            <div className="sections">
+              <Projects />
             </div>
           </Route>
           <Route path="/contact">
