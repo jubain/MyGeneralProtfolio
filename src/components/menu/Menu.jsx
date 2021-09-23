@@ -22,7 +22,7 @@ function Menu({ menuOpen, setmenuOpen }) {
                     <Link to="/works" className="item">Services</Link>
                 </li>
                 <li onClick={() => setmenuOpen(false)}>
-                    <a href="/projects" className="item">Projects</a>
+                    <Link to="/projects" className="item">Projects</Link>
                 </li>
                 <li onClick={() => setmenuOpen(false)}>
                     <Link to="/contact" className="item">Contact</Link>
